@@ -1,0 +1,40 @@
+﻿@model DishFormModel;
+
+@{
+    ViewBag.Title = "Add Dish";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row">
+    <form method="post">
+        <div class="form-group">
+            <div class="mb-3">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" placeholder="Write your title here...">
+                <span asp-validation-for="@Model.Title" class="small text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Ingredients"></label>
+                <input asp-for="Ingredients" class="form-control" placeholder="Write your ingredients here...">
+                <span asp-validation-for="@Model.Ingredients" class="small text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl" class="form-control" placeholder="Write your image here...">
+                <span asp-validation-for="@Model.ImageUrl" class="small text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control">
+                <span asp-validation-for="@Model.Price" class="small text-danger"></span>
+            </div>
+        </div>
+        <input class="btn btn-primary mt-3" type="submit" value="Create" />
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

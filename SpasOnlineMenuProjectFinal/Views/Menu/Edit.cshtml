@@ -1,0 +1,47 @@
+﻿@model DishFormModel
+
+@{
+    ViewBag.title = "Edit";
+}
+
+<h2 class="text-center">@ViewBag.title</h2>
+<hr />
+
+
+<form method="post" asp-controller="Menu" asp-action="Edit" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <div class="mb-3">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" placeholder="Write your title here...">
+            <span asp-validation-for="@Model.Title" class="small text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Ingredients"></label>
+            <input asp-for="Ingredients" class="form-control" placeholder="Write your ingredients here...">
+            <span asp-validation-for="@Model.Ingredients" class="small text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ImageUrl"></label>
+            <input asp-for="ImageUrl" class="form-control" placeholder="Write your image here...">
+            <span asp-validation-for="@Model.ImageUrl" class="small text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control">
+            <span asp-validation-for="@Model.Price" class="small text-danger"></span>
+        </div>
+        
+    </div
+    <div class="d-grid gap-2">
+           
+            <button class="btn btn-primary mt-3" type="submit" >Edit</button>
+           
+        </div>
+    
+</form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

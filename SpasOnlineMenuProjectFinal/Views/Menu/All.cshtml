@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MenuDetailVewModel>
+
+@{
+    ViewBag.Title = "Нашето меню";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="text-center row">
+    <div class="d-grid gap-2 mb-2">
+        <a asp-controller="Menu" asp-action="Add" class="btn btn-primary">Add Dish</a>
+    </div>
+    @foreach (var dish in Model)
+    {
+        <a class="card col-4 d-flex text-black text-decoration-none" style="width: 20rem;" asp-controller="Menu" asp-action="MenuDetails" asp-route-id="@dish.Id">
+            <div>
+                <img class="card-img-top" src="@dish.ImageUrl" alt="House Image">
+                <div class="card-body">
+                    <h5 class="card-title">@dish.Title</h5>
+                    <p class="card-text">@dish.Ingridients</p>
+                </div>
+            </div>
+        </a>
+
+    }
+</div>

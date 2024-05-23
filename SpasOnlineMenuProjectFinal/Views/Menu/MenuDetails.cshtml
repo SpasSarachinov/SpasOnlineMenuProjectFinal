@@ -1,0 +1,20 @@
+﻿@model MenuDetailVewModel
+
+@{
+    ViewBag.Title = "Menu Details";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="card text-center mx-auto" style="width: 25rem;">
+    <img class="card-img-top" src="@Model.ImageUrl" alt="House Image">
+    <div class="card-body">
+        <h2 class="card-title">@Model.Title</h2>
+        <p class="card-text">@Model.Ingridients</p>
+        <h3 class="card-price text-black">@Model.Price Lv</h3>
+    </div>
+
+    <a asp-controller="Menu" asp-action="Edit" asp-route-id="@Model.Id" class ="btn btn-primary mt-3" type="submit" value="Edit" >Edit Dish</a>
+    <a asp-action="Delete" asp-controller="Menu" asp-route-id="@Model.Id">Delete dish</a>
+</div>
